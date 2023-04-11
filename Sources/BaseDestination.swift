@@ -12,23 +12,23 @@ import Dispatch
 
 // store operating system / platform
 #if os(iOS)
-let OS = "iOS"
+public let OS = "iOS"
 #elseif os(OSX)
-let OS = "OSX"
+public let OS = "OSX"
 #elseif os(watchOS)
-let OS = "watchOS"
+public let OS = "watchOS"
 #elseif os(tvOS)
-let OS = "tvOS"
+public let OS = "tvOS"
 #elseif os(Linux)
-let OS = "Linux"
+public let OS = "Linux"
 #elseif os(FreeBSD)
-let OS = "FreeBSD"
+public let OS = "FreeBSD"
 #elseif os(Windows)
-let OS = "Windows"
+public let OS = "Windows"
 #elseif os(Android)
-let OS = "Android"
+public let OS = "Android"
 #else
-let OS = "Unknown"
+public let OS = "Unknown"
 #endif
 
 /// destination which all others inherit from. do not directly use
@@ -90,7 +90,7 @@ open class BaseDestination: Hashable, Equatable {
 
     // each destination instance must have an own serial queue to ensure serial output
     // GCD gives it a prioritization between User Initiated and Utility
-    var queue: DispatchQueue? //dispatch_queue_t?
+    public var queue: DispatchQueue? //dispatch_queue_t?
     var debugPrint = false // set to true to debug the internal filter logic of the class
 
     public init() {
@@ -382,7 +382,7 @@ open class BaseDestination: Hashable, Equatable {
     }
 
     /// turns dict into JSON-encoded string
-    func jsonStringFromDict(_ dict: [String: Any]) -> String? {
+    public func jsonStringFromDict(_ dict: [String: Any]) -> String? {
         var jsonString: String?
 
         // try to create JSON string

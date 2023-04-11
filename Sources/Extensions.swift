@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     /// cross-Swift compatible characters count
     var length: Int {
         return self.count
